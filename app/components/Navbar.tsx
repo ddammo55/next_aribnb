@@ -5,6 +5,7 @@ import MobileLogo from '../../public/airbnb-mobile.webp';
 import Image from 'next/image';
 import UserNav from './UserNav';
 
+
 export default function Navbar() {
     return (
         <nav className='w-full border-b'>
