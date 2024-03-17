@@ -19,5 +19,26 @@ model User {
   firstName String
   lastName  String
   profileImage String?
+  Home Home[]
 
+}
+
+model Home {
+  id String @id @default(uuid()) //숙소의 고유id
+
+  title        String? //제목
+  description  String? //설명
+  guests       String? //게스트수
+  bedrooms     String? //침실 수
+  bathrooms    String? //화장실 수
+  country      String? //나라
+  photo        String? //사진
+  price        Int?  //가격생성날짜
+
+
+
+  createdAT DateTime @default(now()) //생성날짜
+  User      User?    @relation(fields: [userId], references: [id]) //숙소를 등록한 유저
+  userId    String? //숙소를 등록한 유저의 id
+  
 }
